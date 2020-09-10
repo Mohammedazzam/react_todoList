@@ -14,7 +14,7 @@ import AddItem from './components/Additem/AddItem';
     return (
       <div className="App">
         TodoList App
-        <TodoItems/>
+        <TodoItems items ={this.state.items}/>
         <AddItem/>
       </div>
     );
