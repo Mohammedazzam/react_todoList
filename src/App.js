@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import TodoItems from './components/TodoItems/TodoItems'
 import AddItem from './components/Additem/AddItem';
 
- class App extends Component {
-  state ={
-    items :[
-      {id:1,name:'Mohammed', age:22},
-      {id:2,name:'Ramy', age:30},
-      {id:3,name:'Tareg', age:55},
+class App extends Component {
+  state = {
+    items: [
+      { id: 1, name: 'Mohammed', age: 22 },
+      { id: 2, name: 'Ramy', age: 30 },
+      { id: 3, name: 'Tareg', age: 55 },
     ]
   }
 
@@ -21,26 +21,26 @@ import AddItem from './components/Additem/AddItem';
 
 
   //filter الطريقة الثانية باستخدام اشي اسمو ال 
-  deleteItem = (id) =>{
-    let items = this.state.items.filter(item =>{
+  deleteItem = (id) => {
+    let items = this.state.items.filter(item => {
       return item.id !== id
     })
-    this.setState({items})
+    this.setState({ items })
   }
 
-  addItem = (item) =>{
+  addItem = (item) => {
     item.id = Math.random();
     let items = this.state.items;
     items.push(item);
-    this.setState({items})
+    this.setState({ items })
   }
 
   render() {
     return (
-      <div className="App">
-        TodoList App
-        <TodoItems items ={this.state.items} deleteItem={this.deleteItem} />
-        <AddItem AddItem={this.addItem}/>
+      <div className="App container">
+        <h1 className="text-center">TodoList App</h1>
+        <TodoItems items={this.state.items} deleteItem={this.deleteItem} />
+        <AddItem AddItem={this.addItem} />
       </div>
     );
   }
