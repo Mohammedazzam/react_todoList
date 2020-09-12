@@ -28,13 +28,19 @@ import AddItem from './components/Additem/AddItem';
     this.setState({items})
   }
 
+  addItem = (item) =>{
+    item.id = Math.random();
+    let items = this.state.items;
+    items.push(item);
+    this.setState({items})
+  }
 
   render() {
     return (
       <div className="App">
         TodoList App
-        <TodoItems items ={this.state.items} deleteItem={this.deleteItem}/>
-        <AddItem/>
+        <TodoItems items ={this.state.items} deleteItem={this.deleteItem} />
+        <AddItem AddItem={this.addItem}/>
       </div>
     );
   }
